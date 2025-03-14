@@ -1,0 +1,182 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset & General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background with a Soft Gradient */
+body {
+   background: url('./images/home9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    animation: zoomIn 20s infinite alternate linear;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+}
+/* Navigation Bar */
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.navbar:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.nav-links li a:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 10px cyan;
+}
+
+/* Get Started Button */
+.start-btn {
+    padding: 10px 20px;
+    background: cyan;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.start-btn:hover {
+    background: rgba(10, 10, 129, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px cyan;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin: 10px 0;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* Call-To-Action Button */
+.cta-btn {
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background: rgb(188, 187, 195);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+   
+}
+.cta-btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.cta-btn:hover {
+    background: rgba(30, 33, 33, 0.9);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px cyan;
+}

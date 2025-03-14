@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h2>Create an Account</h2>
+            <form id="registerForm">
+                <div class="input-box">
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                    <span class="error" id="nameError"></span>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <span class="error" id="emailError"></span>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="error" id="passwordError"></span>
+                </div>
+                <button type="submit" class="register-btn">Sign Up</button>
+            </form>
+            <div class="options">
+                <p class="register-text">Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get input values
+            let fullName = document.getElementById("fullName").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            // Reset error messages
+            document.getElementById("nameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("passwordError").innerText = "";
+
+            let isValid = true;
+
+            // Name validation
+            if (fullName === "") {
+                document.getElementById("nameError").innerText = "Full Name is required";
+                isValid = false;
+            } else if (fullName.length < 3) {
+                document.getElementById("nameError").innerText = "Name must be at least 3 characters";
+                isValid = false;
+            }
+
+            // Email validation
+            let emailPattern = /^\S+@\S+\.\S+$/;
+            if (email === "") {
+                document.getElementById("emailError").innerText = "Email is required";
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "Invalid email format";
+                isValid = false;
+            }
+            
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerText = "Password must be at least 6 characters";
+                isValid = false;
+            } else if (!/[A-Z]/.test(password) || !/\d/.test(password)) {
+                document.getElementById("passwordError").innerText = "Password must contain at least one uppercase letter and one number";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Registration Successful!");
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
